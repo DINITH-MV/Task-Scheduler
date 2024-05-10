@@ -6,8 +6,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.my_to_do_list.databinding.ViewBinding // Import the generated binding class
+import com.example.todo.CardInfo
 
-class Adapter(var data: List<CardInfo>) : RecyclerView.Adapter<Adapter.ViewHolder>() {
+class Adapter(var data: List<Note>) : RecyclerView.Adapter<Adapter.ViewHolder>() {
 
     class ViewHolder(val binding: ViewBinding) : RecyclerView.ViewHolder(binding.root)
 

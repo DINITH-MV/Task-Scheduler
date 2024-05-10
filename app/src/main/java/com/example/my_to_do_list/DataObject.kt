@@ -1,5 +1,6 @@
 package com.example.my_to_do_list
 
+import com.example.todo.CardInfo
 
 
 object DataObject {

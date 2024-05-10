@@ -10,6 +10,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var  db: NotesDatabaseHelper
     private lateinit var binding: ActivityMainBinding // Declare the binding variable
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater) // Initialize the binding variable
         setContentView(binding.root) // Set the content view to the root of the binding class
 
-
+        db = NotesDatabaseHelper(this)
 
         binding.add.setOnClickListener { // Use binding to reference the add button
             val intent = Intent(this, CreateCard::class.java)
@@ -36,7 +37,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setRecycler() {
-        binding.recyclerView.adapter = Adapter(DataObject.getAllData()) // Use binding to reference the RecyclerView
+        binding.recyclerView.adapter = Adapter(db.getAllNotes()) // Use binding to reference the RecyclerView
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
     }
 }

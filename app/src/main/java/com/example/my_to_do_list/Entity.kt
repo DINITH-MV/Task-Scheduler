@@ -1,4 +1,4 @@
-package com.example.my_to_do_list
+package com.example.todo
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
