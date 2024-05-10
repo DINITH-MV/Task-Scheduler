@@ -20,10 +20,7 @@ class SplashScreen : AppCompatActivity() {
         GlobalScope.launch {
             DataObject.listdata = database.dao().getTasks() as MutableList<CardInfo>
         }
-        Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }, 2000)
+
     }
 
 }
