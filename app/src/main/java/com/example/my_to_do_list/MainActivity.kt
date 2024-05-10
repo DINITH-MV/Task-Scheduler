@@ -10,7 +10,6 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var database: myDatabase
     private lateinit var binding: ActivityMainBinding // Declare the binding variable
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,9 +17,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater) // Initialize the binding variable
         setContentView(binding.root) // Set the content view to the root of the binding class
 
-        database = Room.databaseBuilder(
-            applicationContext, myDatabase::class.java, "To_Do"
-        ).build()
+
 
         binding.add.setOnClickListener { // Use binding to reference the add button
             val intent = Intent(this, CreateCard::class.java)
@@ -30,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         binding.deleteAll.setOnClickListener { // Use binding to reference the deleteAll button
             DataObject.deleteAll()
             GlobalScope.launch {
-                database.dao().deleteAll()
+
             }
             setRecycler()
         }
