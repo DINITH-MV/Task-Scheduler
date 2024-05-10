@@ -31,9 +31,8 @@ class UpdateCard : AppCompatActivity() {
             binding.createPriority.setText(note.priority) // Use binding to reference the priority EditText
 
             binding.deleteButton.setOnClickListener {
-                DataObject.deleteData(pos)
-                GlobalScope.launch {
-
+                    GlobalScope.launch {
+                    db.deleteNote(pos)
                 }
                 myIntent()
             }
