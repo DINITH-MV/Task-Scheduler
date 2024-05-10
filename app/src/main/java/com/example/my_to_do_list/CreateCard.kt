@@ -3,6 +3,7 @@ package com.example.my_to_do_list
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import com.example.my_to_do_list.databinding.ActivityCreateCardBinding // Import the generated binding class
 import androidx.room.Room
@@ -30,6 +31,11 @@ class CreateCard : AppCompatActivity() {
                 DataObject.setData(title, priority)
                 GlobalScope.launch {
                     database.dao().insertTask(Entity(0, title, priority))
+
+                }
+                GlobalScope.launch {
+                    Log.i("harsh", database.dao().getTasks().toString())
+
                 }
 
                 val intent = Intent(this, MainActivity::class.java)

@@ -9,7 +9,6 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class UpdateCard : AppCompatActivity() {
-    private lateinit var database: myDatabase
     private lateinit var binding: ActivityUpdateCardBinding // Declare the binding variable
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,9 +16,7 @@ class UpdateCard : AppCompatActivity() {
         binding = ActivityUpdateCardBinding.inflate(layoutInflater) // Initialize the binding variable
         setContentView(binding.root) // Set the content view to the root of the binding class
 
-        database = Room.databaseBuilder(
-            applicationContext, myDatabase::class.java, "To_Do"
-        ).build()
+
 
         val pos = intent.getIntExtra("id", -1)
         if (pos != -1) {
@@ -31,13 +28,7 @@ class UpdateCard : AppCompatActivity() {
             binding.deleteButton.setOnClickListener {
                 DataObject.deleteData(pos)
                 GlobalScope.launch {
-                    database.dao().deleteTask(
-                        Entity(
-                            pos + 1,
-                            binding.createTitle.text.toString(),
-                            binding.createPriority.text.toString()
-                        )
-                    )
+
                 }
                 myIntent()
             }
@@ -49,13 +40,7 @@ class UpdateCard : AppCompatActivity() {
                     binding.createPriority.text.toString()
                 )
                 GlobalScope.launch {
-                    database.dao().updateTask(
-                        Entity(
-                            pos + 1,
-                            binding.createTitle.text.toString(),
-                            binding.createPriority.text.toString()
-                        )
-                    )
+
                 }
                 myIntent()
             }
