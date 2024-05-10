@@ -26,7 +26,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.deleteAll.setOnClickListener { // Use binding to reference the deleteAll button
-            DataObject.deleteAll()
             GlobalScope.launch {
 
             }

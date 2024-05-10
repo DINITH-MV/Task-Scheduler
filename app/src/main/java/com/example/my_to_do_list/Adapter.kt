@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.my_to_do_list.databinding.ViewBinding // Import the generated binding class
-import com.example.todo.CardInfo
 
 class Adapter(var data: List<Note>) : RecyclerView.Adapter<Adapter.ViewHolder>() {
 
@@ -18,6 +17,7 @@ class Adapter(var data: List<Note>) : RecyclerView.Adapter<Adapter.ViewHolder>()
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val note = data[position]
         with(holder.binding) {
             when (data[position].priority.lowercase()) {
                 "high" -> mylayout.setBackgroundColor(Color.parseColor("#F05454"))
@@ -28,8 +28,9 @@ class Adapter(var data: List<Note>) : RecyclerView.Adapter<Adapter.ViewHolder>()
             title.text = data[position].title
             priority.text = data[position].priority
             root.setOnClickListener {
-                val intent = Intent(root.context, UpdateCard::class.java)
-                intent.putExtra("id", position)
+                val intent = Intent(root.context, UpdateCard::class.java) .apply{
+               putExtra("id", note.id)
+                }
                 root.context.startActivity(intent)
             }
         }

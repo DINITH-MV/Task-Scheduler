@@ -27,7 +27,6 @@ class NotesDatabaseHelper(context: Context) :
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
         val dropTableQuery = "DROP TABLE IF EXISTS $TABLE_NAME"
         db?.execSQL(dropTableQuery)
-        onCreate(db)
     }
 
     fun insertNote(note: Note) {

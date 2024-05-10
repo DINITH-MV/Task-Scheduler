@@ -27,7 +27,6 @@ class CreateCard : AppCompatActivity() {
             val priority = binding.createPriority.text.toString().trim() // Use binding to reference the priority EditText
 
             if (title.isNotEmpty() && priority.isNotEmpty()) {
-                DataObject.setData(title, priority)
                 GlobalScope.launch {
                     val note = Note(0,title,priority)
                     db.insertNote(note)
