@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.my_to_do_list"
+    namespace = "com.example.task_scheduler"
     compileSdk = 34
 
     buildFeatures {
@@ -13,7 +13,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.example.my_to_do_list"
+        applicationId = "com.example.task_scheduler"
         minSdk = 33
         targetSdk = 34
         versionCode = 1

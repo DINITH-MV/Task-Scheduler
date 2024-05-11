@@ -1,3 +1,3 @@
-package com.example.my_to_do_list
+package com.example.task_scheduler
 
 data class Note(val id: Int, val title:String, val priority:String)

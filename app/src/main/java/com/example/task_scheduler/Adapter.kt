@@ -1,11 +1,11 @@
-package com.example.my_to_do_list
+package com.example.task_scheduler
 
 import android.content.Intent
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.my_to_do_list.databinding.ViewBinding // Import the generated binding class
+import com.example.task_scheduler.databinding.ViewBinding // Import the generated binding class
 
 class Adapter(var data: List<Note>) : RecyclerView.Adapter<Adapter.ViewHolder>() {
 
@@ -22,7 +22,7 @@ class Adapter(var data: List<Note>) : RecyclerView.Adapter<Adapter.ViewHolder>()
             when (data[position].priority.lowercase()) {
                 "high" -> mylayout.setBackgroundColor(Color.parseColor("#F05454"))
                 "medium" -> mylayout.setBackgroundColor(Color.parseColor("#EDC988"))
-                else -> mylayout.setBackgroundColor(Color.parseColor("#00917C"))
+                else -> mylayout.setBackgroundColor(Color.parseColor("#000000"))
             }
 
             title.text = data[position].title

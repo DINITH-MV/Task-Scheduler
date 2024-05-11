@@ -1,6 +1,5 @@
-package com.example.my_to_do_list
+package com.example.task_scheduler
 
-import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase

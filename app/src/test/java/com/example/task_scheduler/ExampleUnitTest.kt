@@ -1,4 +1,4 @@
-package com.example.my_to_do_list
+package com.example.task_scheduler
 
 import org.junit.Test
 

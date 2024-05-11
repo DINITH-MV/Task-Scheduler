@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "My-To-do-List"
+rootProject.name = "Task-Scheduler"
 include(":app")
  
