@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
 
     <style name="Theme.task_scheduler" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Primary brand color. -->
+        
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
@@ -12,6 +12,6 @@
         <item name="colorOnSecondary">@color/black</item>
 
         <item name="android:statusBarColor" tools:targetApi="l">@color/black</item>
-       
+
     </style>
 </resources>
